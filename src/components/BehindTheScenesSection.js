@@ -36,38 +36,5 @@ const steps = [
 ];
 
 export default function BehindTheScenesSection() {
-  const [current, setCurrent] = useState(0);
-  return (
-    <section id="behind-the-scenes" className="py-24 bg-gradient-to-b from-blue-50 via-white to-blue-100 border-b min-h-screen">
-      <div className="max-w-5xl mx-auto px-4 md:px-10">
-        <h2 className="text-4xl font-extrabold mb-10 text-blue-900 text-center tracking-tight drop-shadow">Behind the Scenes: How LLMs Are Created</h2>
-        <p className="mb-12 text-xl text-gray-700 text-center max-w-2xl mx-auto leading-relaxed">
-          Ever wondered how large language models (LLMs) like GPT-4, Llama, or Qwen are built? It's a multi-stage process involving auto-collected datasets, expert curation, massive compute, and ongoing improvement. Here's a modern, step-by-step look:
-        </p>
-        <div className="flex flex-col items-center mb-14">
-          <div className="w-full max-w-lg">
-            {steps.map((step, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className={`flex items-start gap-4 mb-8 p-6 rounded-2xl shadow-xl border-l-8 ${i === 2 ? 'border-blue-500 bg-blue-50' : 'border-blue-200 bg-white'}`}
-              >
-                <div className="text-4xl mt-1">{step.icon}</div>
-                <div>
-                  <div className="font-bold text-blue-800 text-lg mb-1">{step.title}</div>
-                  <div className="text-gray-700 text-base">{step.desc}</div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-        <div className="mt-12 text-center text-blue-700 text-lg">
-          <b>Fun Fact:</b> Some LLMs are trained on trillions of words, and new models are being improved every day with user feedback, auto-collected data, and advanced safety techniques. <br/>
-          <span className="text-blue-900 font-semibold">Machine learning (ML) is the engine behind LLMs—enabling them to learn from data, adapt, and generate human-like language.</span>
-        </div>
-      </div>
-    </section>
-  );
+  return null;
 }

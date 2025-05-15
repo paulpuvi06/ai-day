@@ -52,30 +52,60 @@ export default function LLMCapabilitiesSection() {
     <section id="capabilities" className="py-16 bg-blue-50 border-b">
       <div className="max-w-4xl mx-auto px-4">
         <h2 className="text-2xl font-bold mb-6 text-blue-700">What Can LLMs Do?</h2>
+        <p className="mb-6 text-lg text-gray-700 max-w-2xl">
+          Large Language Models (LLMs) are versatile AI systems that can perform a wide range of language and reasoning tasks. Their core capabilities include answering questions, summarizing text, writing stories, translating languages, generating code, and more. Modern LLMs can also process images, audio, and video, and interact with external tools for real-world applications.
+        </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
           {capabilities.map((cap, i) => (
             <button
               key={cap.name}
               className={`rounded-lg px-4 py-6 shadow text-lg font-semibold transition-all duration-200 focus:outline-none ${selected === i ? "bg-blue-600 text-white" : "bg-white text-blue-700 hover:bg-blue-100"}`}
               onClick={() => setSelected(i)}
+              aria-label={`Show example for ${cap.name}`}
             >
               {cap.name}
             </button>
           ))}
+          <button
+            className="rounded-lg px-4 py-6 shadow text-lg font-semibold transition-all duration-200 bg-white text-blue-700 hover:bg-blue-100"
+            disabled
+          >
+            Multimodal (Text, Image, Audio, Video)
+          </button>
+          <button
+            className="rounded-lg px-4 py-6 shadow text-lg font-semibold transition-all duration-200 bg-white text-blue-700 hover:bg-blue-100"
+            disabled
+          >
+            Tool Use & Web Search
+          </button>
+          <button
+            className="rounded-lg px-4 py-6 shadow text-lg font-semibold transition-all duration-200 bg-white text-blue-700 hover:bg-blue-100"
+            disabled
+          >
+            Text-to-Image / Image-to-Text
+          </button>
         </div>
         {selected !== null && (
           <div className="bg-white rounded-lg shadow p-6 text-gray-800 text-lg animate-fade-in">
-            <pre className="whitespace-pre-wrap font-mono mb-4">{capabilities[selected].example}</pre>
+            <div className="mb-4">
+              <span className="font-semibold text-blue-700">Capability:</span> {capabilities[selected].name}
+            </div>
+            <pre className="whitespace-pre-wrap font-mono mb-4 bg-blue-50 rounded p-3 text-base">{capabilities[selected].example}</pre>
             <div className="bg-blue-50 rounded p-4 mt-2">
               <div className="font-semibold text-blue-700 mb-1">Real-World Example:</div>
               <div className="text-sm text-gray-700">
-                <span className="font-mono">{capabilities[selected].realtime.prompt}</span>
-                <br />
-                <span className="font-mono text-green-700">{capabilities[selected].realtime.output}</span>
+                <span className="font-mono block mb-1 text-blue-900">Prompt: {capabilities[selected].realtime.prompt}</span>
+                <span className="font-mono text-green-700 block">Output: {capabilities[selected].realtime.output}</span>
               </div>
+            </div>
+            <div className="mt-4 text-sm text-blue-700">
+              <b>Tip:</b> Try combining capabilities! For example, ask an LLM to summarize a document and then translate the summary, or generate code and explain it step by step.
             </div>
           </div>
         )}
+        <div className="mb-4 text-blue-900 bg-blue-100 rounded p-3">
+          <b>Note:</b> LLM capabilities differ by model and version. Most support general functions like text generation, summarization, translation, and Q&A. Some are specialized for code, images, or multimodal tasks. For chatbot use, advanced features (like web search, up-to-date info, or tool use) require connecting the LLM to external tools and data sources.
+        </div>
         <Quiz
           question="Which LLM capability lets you translate languages?"
           options={["Summarize Text", "Translate Languages", "Write Stories", "Code Generation"]}

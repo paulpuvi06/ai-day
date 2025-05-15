@@ -1,1 +1,1 @@
-// (Component fully removed. Safe to delete this file.)
+// File removed: This component and all references to it should be deleted as per user request.

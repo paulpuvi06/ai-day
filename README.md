@@ -1,8 +1,6 @@
 # LLM Explorer: Interactive Educational Platform
 
-Welcome to **LLM Explorer** — a modern, interactive educational site for learning about Large Language Models (LLMs), AI protocols, Retrieval-Augmented Generation (RAG), embeddings, and real-world AI tools like GitHub Copilot. Built with Next.js 15, Tailwind CSS, and framer-motion, LLM Explorer delivers a beautiful, responsive, and engaging experience for all learners.
-
-
+Welcome to **LLM Explorer** — a modern, interactive  site for learning about Large Language Models (LLMs), AI protocols, Retrieval-Augmented Generation (RAG), embeddings, and real-world AI tools like GitHub Copilot. Built with Next.js 15, Tailwind CSS, and framer-motion, LLM Explorer delivers a beautiful, responsive, and engaging experience for all learners.
 
 ---
 
