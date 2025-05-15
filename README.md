@@ -1,17 +1,15 @@
-# LLM Explorer: Interactive Educational Platform
+# LLM Overview
 
-Welcome to **LLM Explorer** — a modern, interactive  site for learning about Large Language Models (LLMs), AI protocols, Retrieval-Augmented Generation (RAG), embeddings, and real-world AI tools like GitHub Copilot. Built with Next.js 15, Tailwind CSS, and framer-motion, LLM Explorer delivers a beautiful, responsive, and engaging experience for all learners.
+A modern, interactive Single Page Application (SPA) built with Next.js 15, designed to provide a high-level overview of Large Language Models (LLMs), GitHub Copilot, and their real-world usage. The site is statically generated and easily deployable to GitHub Pages.
 
----
+## 🚀 Features
 
-## 🧭 How to Use
-
-1. **Explore Each Section:** Expand/collapse topics as you go. Drag to reorder for your learning style.
-2. **Take the Quizzes:** Check your understanding and reinforce learning.
-3. **Try the Code:** Copy code samples and experiment in your own projects.
-4. **Share & Review:** Share your progress and revisit for updates.
-
----
+- Interactive, analogy-based explanations of LLMs for non-technical audiences
+- Visuals and step-by-step guides for LLM training, context, and attention
+- Comparison of paid vs open-source LLMs
+- Overview of GitHub Copilot and its capabilities
+- Modern UI with Tailwind CSS and framer-motion animations
+- Fully static export (no server needed)
 
 ## 🛠️ Tech Stack
 
@@ -21,72 +19,37 @@ Welcome to **LLM Explorer** — a modern, interactive  site for learning about L
 - **framer-motion** (animations)
 - **Docker & NGINX** (for static deployment)
 
----
-
 ## 📦 Getting Started
 
 ```bash
 npm install
-npm run dev
-# Visit http://localhost:3000
-```
-
----
-
-## 🏗️ Build for Production (Static Export)
-
-```bash
 npm run build
-npm start
 # Output will be in the 'out/' directory (static export)
 ```
 
----
+## 🌐 Deploy to GitHub Pages
 
-## 🐳 Docker & Docker Compose
+- The site is configured for static export using `output: 'export'` in `next.config.js`.
+- Use the provided GitHub Actions workflow (`.github/workflows/deploy-gh-pages.yml`) to build and deploy to the `gh-pages` branch.
+- Set your GitHub Pages source to the `gh-pages` branch, root folder.
 
-### Build and Run with Docker
+## 🐳 Docker
 
-```bash
-docker build -t llm-explorer .
-docker run -p 3000:80 llm-explorer
-# App will be available at http://localhost:3000
-```
-
-### Or Use Docker Compose
+To build and run the static site with Docker:
 
 ```bash
-docker-compose up --build
-# App will be available at http://localhost:3000
+docker build -t llm-overview .
+docker run -p 8080:80 llm-overview
 ```
 
----
+Visit [http://localhost:8080](http://localhost:8080)
 
 ## 📁 Folder Structure
 
-- `src/app/` — Main app and layout
-- `src/components/` — All interactive and visual components
-- `src/lib/` — Utility functions
-- `src/styles/` — Tailwind and global styles
-
----
-
-## 📚 What You'll Learn
-
-- **LLM Fundamentals:** What are LLMs? How do they work?
-- **Training & Tokenization:** Interactive demos and visualizations. [Try more: OpenAI Tokenizer](https://platform.openai.com/tokenizer), [tiktokenizer](https://tiktokenizer.vercel.app/)
-- **Context & Attention:** See how LLMs "focus" on words and ideas.
-- **Paid vs Open-Source Models:** Compare capabilities and use cases.
-- **Key Model Families:** GPT, Llama, Mistral, Gemini, and more.
-- **Protocols:** MCP, A2A — powering AI interoperability.
-- **RAG & Embeddings:** How retrieval and vector search work.
-- **Copilot Modes:** Ask, Edit, and Agent explained with examples.
-- **Quizzes & Demos:** Reinforce learning with hands-on activities.
-
----
+- `src/app/` — Main app and layout files
+- `src/components/` — All UI components
+- `src/styles/` — Tailwind/global styles
 
 ## 📄 License
 
 MIT
-
----
